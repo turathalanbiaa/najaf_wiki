@@ -1,0 +1,30 @@
+body {
+   background: url("../img/body-top.png") repeat-x top left #f6f6f6;;
+    direction: rtl;
+    font-family: Roboto;
+  }
+.navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .04)
+}
+
+.articale {
+    padding: 1.25em 1.5em 1.5em 1.5em;
+    border-right: 1px solid #a7d7f9;
+    background: #FFF;
+    line-height: 1.6;
+    font-size: 0.875em;
+    border-top: 1px solid #a7d7f9;
+    border-bottom: 1px solid #a7d7f9;
+}
+.articale h1 {
+    font-size: 1.8em;
+    border-bottom: 1px solid #a2a9b1;
+}
+.articale h2 {
+    font-size: 1.6em;
+    margin: 0.5em 0 0.5em 0;
+    border-bottom: 1px solid #a2a9b1;
+    line-height: 1.4em;
+    padding-bottom: 0em;
+}
