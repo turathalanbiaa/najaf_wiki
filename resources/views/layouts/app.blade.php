@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>موسوعة النجف</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/jquery-3.4.1.min.js') }}" ></script>
