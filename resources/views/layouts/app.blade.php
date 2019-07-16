@@ -72,7 +72,10 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('تسجيل خروج') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('showChangePasswordForm')}}">
 
+                                        {{ __('تغير كلمة المرور') }}
+                                    </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

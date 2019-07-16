@@ -74,7 +74,7 @@ class DashboardController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return view('dashboard/detail',compact('post'));
+        return view('dashboard.detail',compact('post'));
     }
 
     /**
@@ -88,7 +88,7 @@ class DashboardController extends Controller
         $post = Post::find($id);
         $categories = Category::All();
         //return response()->json($post);
-        return view('dashboard/edit',compact('post','categories'));
+        return view('dashboard.edit',compact('post','categories'));
     }
 
     /**

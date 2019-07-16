@@ -31,7 +31,7 @@
 
                     <td class="d-flex">
                         <a  href="{{ route('admin.edit',$user->id)}}" class="btn  btn-sm btn-primary mr-1">تعديل</a>
-                        <a href="{{ route('edit-password',$user->id)}}" class="btn  btn-sm btn-warning">تغير الباسورد</a>
+                        <a href="{{ route('editPassword',$user->id)}}" class="btn  btn-sm btn-warning">تغير كلمة المرور</a>
                         <form class="delFrm" action="{{route('admin.destroy',$user->id)}}" method="post">
                             @csrf
                             @method('DELETE')

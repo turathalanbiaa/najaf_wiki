@@ -33,7 +33,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-            $users = User::paginate(5);
+            $users = User::where('name','!=','Admin')->paginate(5);
             return view('admin.index', compact('users'));
     }
 
@@ -134,15 +134,15 @@ class AdminController extends Controller
     /**
     edit password
      */
-    public function edit_password($id)
+    public function editPassword($id)
     {
         $user = User::find($id);
-        return view('admin.edit-password',compact('user'));
+        return view('admin.editPassword',compact('user'));
     }
     /**
      update password
      */
-    public function update_password(Request $request, $id)
+    public function updatePassword(Request $request, $id)
     {
         $request->validate([
             'password' => 'required|min:6|confirmed',

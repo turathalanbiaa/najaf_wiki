@@ -18,10 +18,13 @@ Route::get('/search', 'Website\HomeController@search');
 Route::get('/post/{id}', 'Website\HomeController@show')->name('post');
 
 Route::resource('dashboard','Dashboard\DashboardController');
-Route::get('/get_subcategory/{id}', 'Dashboard\DashboardController@getSubcategory');
+Route::get('/getSubcategory/{id}', 'Dashboard\DashboardController@getSubcategory');
 
 Auth::routes(['register' => false]);
 
 Route::resource('admin','Admin\AdminController');
-Route::get('edit-password/{id}','Admin\AdminController@edit_password')->name('edit-password');
-Route::post('update-password/{id}','Admin\AdminController@update_password')->name('update-password');
+Route::get('/editPassword/{id}','Admin\AdminController@editPassword')->name('editPassword');
+Route::post('/updatePassword/{id}','Admin\AdminController@updatePassword')->name('updatePassword');
+
+Route::get('/showChangePasswordForm','Auth\ChangePasswordController@showChangePasswordForm')->name('showChangePasswordForm');
+Route::post('/changePassword','Auth\ChangePasswordController@changePassword')->name('changePassword');
