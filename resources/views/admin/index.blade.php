@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="container">
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>{{ $message }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
+        @if (Session::has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ Session::get('success') }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
     <table class="table table-bordered">
         <thead>
         <th>الاسم</th>
@@ -31,7 +31,7 @@
 
                     <td class="d-flex">
                         <a  href="{{ route('admin.edit',$user->id)}}" class="btn  btn-sm btn-primary mr-1">تعديل</a>
-                        <a href="{{ route('editPassword',$user->id)}}" class="btn  btn-sm btn-warning">تغير كلمة المرور</a>
+                        <a href="{{ route('editPassword',$user->id)}}" class="btn  btn-sm btn-secondary">تغير كلمة المرور</a>
                         <form class="delFrm" action="{{route('admin.destroy',$user->id)}}" method="post">
                             @csrf
                             @method('DELETE')

@@ -1,14 +1,13 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <br />
-        @if (\Session::has('success'))
+        @if (Session::has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <p>{{ \Session::get('success') }}</p>
+                <strong>{{ Session::get('success') }}</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div><br />
+            </div>
         @endif
         <table class="table table-bordered">
             <thead>
@@ -23,7 +22,7 @@
 
                     <td class="d-flex">
                         <a  href="{{route('dashboard.show', $post->id)}}" class="btn  btn-sm btn-primary mr-1">معاينة</a>
-                        <a href="{{route('dashboard.edit', $post->id)}}" class="btn  btn-sm btn-warning">تعديل</a>
+                        <a href="{{route('dashboard.edit', $post->id)}}" class="btn  btn-sm btn-secondary">تعديل</a>
                         <form class="delFrm" action="{{route('dashboard.destroy',$post->id)}}" method="post">
                             @csrf
                             @method('DELETE')

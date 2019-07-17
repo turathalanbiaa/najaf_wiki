@@ -40,7 +40,7 @@
         $(function () {
             $('#category').on('change', function() {
                 $('#subcategory').empty();
-                $.get('/get_subcategory/'+this.value,function(data){
+                $.get('/getSubcategory/'+this.value,function(data){
                     $.each(data,function (index,object) {
                         $('#subcategory').append('<option value="'+object.id+'">'+object.name+'</option>')
                     });
