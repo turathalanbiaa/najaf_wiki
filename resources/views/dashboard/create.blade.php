@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
   <div class="container">
-    <h4>أضافة بوست جديد</h4><br/>
+    <h4>أضافة مقالة جديده</h4><br/>
     <form method="post" action="{{route('dashboard.store')}}" enctype="multipart/form-data">
       @csrf
         <div class="form-group">

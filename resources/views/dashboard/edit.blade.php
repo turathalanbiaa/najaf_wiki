@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
   <div class="container">
-      <h4> تعديل مقال</h4><br/>
+      <h4> تعديل مقالة</h4><br/>
       <form method="post" action="{{route('dashboard.update', $post->id)}}" enctype="multipart/form-data">
         @csrf
         <input name="_method" type="hidden" value="PATCH">
