@@ -44,13 +44,12 @@
             <div class="col">
           <ul class="nav nav-tabs"  style="border-bottom: 1px solid #a7d7f9;">
                     <li class="nav-item">
-                        <a class="nav-link active"  href="{{url('/index')}}" >المقالة</a>
+                        <a class="nav-link"  href="{{url('/index')}}" >المقالة</a>
                     </li>
-           {{--<li class="nav-item" >
-                         <a class="nav-link"  href="{{url('/comments')}}" >تعليق</a>
-                    </li>--}}
-
-                </ul>
+                  <li class="nav-item active" >
+                         <a class="nav-link active"  href="{{url('/comments')}}" >تعليق</a>
+                    </li>
+          </ul>
                 <div class="articale border-top-0">
                     @forelse  ($posts as $post)
                         <h2>{!! $post->title!!} </h2>

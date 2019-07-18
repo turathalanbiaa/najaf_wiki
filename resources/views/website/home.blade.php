@@ -31,7 +31,7 @@
 
     <div class= "text-center pt-3">
         <input class="btn btn-sm btn-primary" type="submit" form="frmSearch" value="ابحث" >
-        <a class="btn btn-sm btn-secondary" href={{url('/index')}} >الصفحة الرئيسية</a>
+        <a class="btn btn-sm btn-secondary" href={{url('/posts')}} >الصفحة الرئيسية</a>
     </div>
 
 </main>

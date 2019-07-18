@@ -12,10 +12,11 @@
 */
 
 
-Route::get('/', 'Website\HomeController@home');
-Route::get('/index', 'Website\HomeController@index');
-Route::get('/search', 'Website\HomeController@search');
-Route::get('/post/{id}', 'Website\HomeController@show')->name('post');
+Route::get('/', 'Website\WebsiteController@home');
+Route::get('/posts', 'Website\WebsiteController@posts');
+Route::get('/comments', 'Website\WebsiteController@comments');
+Route::get('/search', 'Website\WebsiteController@search');
+Route::get('/post/{id}', 'Website\WebsiteController@show')->name('post');
 
 Route::resource('dashboard','Dashboard\DashboardController');
 Route::get('/getSubcategory/{id}', 'Dashboard\DashboardController@getSubcategory');
