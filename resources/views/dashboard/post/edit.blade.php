@@ -2,7 +2,7 @@
 @section('content')
   <div class="container">
       <h4> تعديل مقالة</h4><br/>
-      <form method="post" action="{{route('post', $post->id)}}" enctype="multipart/form-data">
+      <form method="post" action="{{route('posts.update', $post->id)}}" enctype="multipart/form-data">
         @csrf
         <input name="_method" type="hidden" value="PATCH">
           <div class="form-group">
@@ -41,7 +41,7 @@
         $(function () {
             $('#category').on('change', function() {
                 $('#subcategory').empty();
-                $.get('/getSubcategory/'+this.value,function(data){
+                $.get('/dashboard/getSubcategory/'+this.value,function(data){
                     $.each(data,function (index,object) {
                         $('#subcategory').append('<option value="'+object.id+'">'+object.name+'</option>')
                     });

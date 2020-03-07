@@ -42,7 +42,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::All();
-        return view('dashboard.article.create', compact('categories'));
+        return view('dashboard.post.create', compact('categories'));
     }
 
     /**
@@ -63,7 +63,7 @@ class PostController extends Controller
         $post->description=$request->get('description');
         $post->subcategory_id=$request->get('subcategory');
        $post->save();
-        return redirect('dashboard.post')->with('success', 'تمت الأضافه بنجاح');
+        return redirect('dashboard/posts')->with('success', 'تمت الأضافه بنجاح');
     }
 
     /**
@@ -106,7 +106,7 @@ class PostController extends Controller
         $post->description=$request->get('description');
         $post->subcategory_id=$request->get('subcategory');
         $post->save();
-        return redirect('dashboard/post')->with('success', 'تمت التعديل بنجاح');
+        return redirect('dashboard/posts')->with('success', 'تمت التعديل بنجاح');
     }
 
     /**
@@ -119,7 +119,7 @@ class PostController extends Controller
     {
         $post= Post::find($id);
         $post->delete();
-        return redirect('dashboard')->with('success','تم الحذف بنجاح');
+        return redirect('dashboard/posts')->with('success','تم الحذف بنجاح');
 
     }
     public function getSubcategory($id)

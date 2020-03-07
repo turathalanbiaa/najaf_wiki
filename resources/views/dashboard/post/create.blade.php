@@ -2,7 +2,7 @@
 @section('content')
   <div class="container">
     <h4>أضافة مقالة جديده</h4><br/>
-    <form method="post" action="{{route('post')}}" enctype="multipart/form-data">
+    <form method="post" action="{{route('posts.store')}}" enctype="multipart/form-data">
       @csrf
         <div class="form-group">
             <label for="category">الصنف الرئيسي</label>
@@ -30,7 +30,7 @@
       </div>
 
       <button type="submit" class="btn btn-sm btn-primary px-4">حفظ</button>
-        <a href="{{route('post')}}" class="btn btn-sm btn-secondary px-4">الغاء</a>
+        <a href="{{route('posts.index')}}" class="btn btn-sm btn-secondary px-4">الغاء</a>
     </form>
   </div>
 @endsection
@@ -40,7 +40,7 @@
         $(function () {
             $('#category').on('change', function() {
                 $('#subcategory').empty();
-                $.get('/getSubcategory/'+this.value,function(data){
+                $.get('/dashboard/getSubcategory/'+this.value,function(data){
                     $.each(data,function (index,object) {
                         $('#subcategory').append('<option value="'+object.id+'">'+object.name+'</option>')
                     });

@@ -73,7 +73,7 @@
             <div class="col">
                 <ul class="nav nav-tabs"  style="border-bottom: 1px solid #a7d7f9;">
                     <li class="nav-item">
-                        <a class="nav-link"  @isset($post) href="{{route('post',$post->id)}}" @endisset >المقالة</a>
+                        <a class="nav-link"  @isset($post) href="{{route('post',$post->subcategory_id)}}" @endisset >المقالة</a>
                     </li>
                     <li class="nav-item" >
                         <a class="nav-link active"   @isset($post) href="{{route('comments',$post->id)}}" @endisset>التعليقات</a>

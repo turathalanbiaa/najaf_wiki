@@ -38,14 +38,14 @@
                         @auth
                             @if(Auth::user()->hasRole('مدير')||Auth::user()->hasRole('محرر'))
                         <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/dashboard') }}">
+                        <a class="nav-link" href="{{ url('/dashboard/posts') }}">
                            لوحة التحكم
                         </a>
                         </li>
                             @endif
                         @if(Auth::user()->hasRole('مدير'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin') }}">
+                            <a class="nav-link" href="{{ url('/dashboard/admins') }}">
                                 ادارة المستخدمين
                             </a>
                         </li>
