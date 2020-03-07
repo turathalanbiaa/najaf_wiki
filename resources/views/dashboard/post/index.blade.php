@@ -15,15 +15,15 @@
             <th>العمليات</th>
             </thead>
             <tbody>
-            <a class="btn  btn-sm btn-success m-2  px-4" href="{{route('dashboard.create')}}">جديد</a>
+            <a class="btn  btn-sm btn-success m-2  px-4" href="{{route('posts.create')}}">جديد</a>
             @foreach ($posts as $post)
                 <tr>
                     <td>{{$post->title}}</td>
 
                     <td class="d-flex">
-                        <a  href="{{route('dashboard.show', $post->id)}}" class="btn  btn-sm btn-primary mr-1">معاينة</a>
-                        <a href="{{route('dashboard.edit', $post->id)}}" class="btn  btn-sm btn-secondary">تعديل</a>
-                        <form class="delFrm" action="{{route('dashboard.destroy',$post->id)}}" method="post">
+                        <a  href="{{route('posts.show', $post->id)}}" class="btn  btn-sm btn-primary mr-1">معاينة</a>
+                        <a href="{{route('posts.edit', $post->id)}}" class="btn  btn-sm btn-secondary">تعديل</a>
+                        <form class="delFrm" action="{{route('posts.destroy',$post->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger mx-1" type="submit">حذف</button>

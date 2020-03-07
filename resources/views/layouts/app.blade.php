@@ -36,14 +36,14 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @auth
-                            @if(Auth::user()->hasRole('admin')||Auth::user()->hasRole('author'))
+                            @if(Auth::user()->hasRole('مدير')||Auth::user()->hasRole('محرر'))
                         <li class="nav-item">
                         <a class="nav-link" href="{{ url('/dashboard') }}">
                            لوحة التحكم
                         </a>
                         </li>
                             @endif
-                        @if(Auth::user()->hasRole('admin'))
+                        @if(Auth::user()->hasRole('مدير'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin') }}">
                                 ادارة المستخدمين

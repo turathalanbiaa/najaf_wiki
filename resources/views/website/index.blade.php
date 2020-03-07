@@ -19,8 +19,40 @@
 
 <body>
 <div class="container-fluid">
+
+            @guest
+
+                    <div class="d-flex flex-row-reverse  p-0" >
+                        <div class="pt-2 px-1">  <a  href="{{ route('login') }}"  style="color:#0645ad">{{ __('دخول') }}</a></div>
+                        <div class="pt-2 px-1">  <a href="{{ route('register') }}"  style="color:#0645ad">{{ __('انشاء حساب') }}</a></div>
+                    </div>
+            @else
+
+                    <div class="d-flex flex-row-reverse" >
+                <div class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            {{ __('خروج') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+        </div>
+    @endguest
+
+
     <div class="row align-items-baseline">
-        <div class="col-sm-2 px-1">
+        <div class="col-sm-1 px-1">
+
             <div class="py-2 sticky-top flex-grow-1">
                 <div class="nav flex-sm-column">
                     <div class="text-center">
@@ -38,33 +70,36 @@
                         @endforeach
 
                     </ul>
+
+
                 </div>
             </div>
         </div>
             <div class="col">
           <ul class="nav nav-tabs"  style="border-bottom: 1px solid #a7d7f9;">
                     <li class="nav-item">
-                        <a class="nav-link active"  href="{{url('/index')}}" >المقالة</a>
+                        <a class="nav-link active"  @isset($post) href="{{route('post',$post->id)}}" @endisset >المقالة</a>
                     </li>
-           {{--<li class="nav-item" >
-                         <a class="nav-link"  href="{{url('/comments')}}" >تعليق</a>
-                    </li>--}}
+           <li class="nav-item" >
+                         <a class="nav-link"   @isset($post) href="{{route('comments',$post->id)}}" @endisset>التعليقات</a>
+                    </li>
 
                 </ul>
                 <div class="articale border-top-0">
-                    @forelse  ($posts as $post)
+                    @isset($post)
                         <h2>{!! $post->title!!} </h2>
                         <p>
                             {!!$post->description!!}
                         </p>
-                        @empty
+                    @endisset
+                        @empty($post)
                         <p>
                            لايوجد بيانات
                             <a class="nav-link pb-0" style="color:#0645ad"
-                               href="{{url('/')}}">رجوع</a>
+                               href="{{url('/post')}}">رجوع</a>
                         </p>
 
-                    @endforelse
+                        @endempty
                 </div>
 
                 <footer class="col p-0">
@@ -73,7 +108,7 @@
                             <a class="nav-link mr-0" style="color:#0645ad" href="#">معهد تراث الانبياء</a>
                         </li>
                         <li class="nav-item mr-0">
-                            <a class="nav-link mr-0" style="color:#0645ad" href="#">القيس بوك</a>
+                            <a class="nav-link mr-0" style="color:#0645ad" href="#">الفيس بوك</a>
                         </li>
                         <li class="nav-item mr-0">
                             <a class="nav-link mr-0" style="color:#0645ad" href="#">تليكرام</a>

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Dashboard;
 
+use App\Admin;
 use App\Http\Controllers\Controller;
 use App\Role;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -21,8 +21,8 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('role:admin');
+       $this->middleware('auth:admin');
+        $this->middleware('role:مدير');
     }
 
 
@@ -33,8 +33,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-            $users = User::where('name','!=','Admin')->paginate(5);
-            return view('admin.index', compact('users'));
+            $admins = Admin::where('name','!=','Admin')->paginate(5);
+            return view('dashboard.admin.index', compact('admins'));
     }
 
     /**
@@ -45,7 +45,7 @@ class AdminController extends Controller
     public function create()
     {
             $roles = Role::all();
-            return view("admin.create", compact("roles"));
+            return view("dashboard.admin.create", compact("roles"));
     }
 
     /**
@@ -62,13 +62,13 @@ class AdminController extends Controller
             'password' => 'required|min:6|confirmed',
             'role' => 'required|string',
         ]);
-     $user = User::create([
+     $user = Admin::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ]);
         $user->roles()->sync($request['role']);
-        return redirect()->route('admin.index')
+        return redirect()->route('admins.index')
             ->with('success','تم الانشاء بنجاح');
     }
 
@@ -91,9 +91,9 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
+        $admin = Admin::find($id);
         $roles = Role::all();
-        return view('admin.edit',compact('user','roles'));
+        return view('dashboard.admin.edit',compact('admin','roles'));
     }
 
     /**
@@ -107,15 +107,15 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required|min:2|max:50',
-            'email' => ['required', 'email', Rule::unique('users')->ignore($id)],
+            'email' => ['required', 'email', Rule::unique('admins')->ignore($id)],
             'role' => 'required|string',
         ]);
-           $user=User::find($id);
-           $user->name = $request['name'];
-           $user->email= $request['email'];
-           $user->save();
-           $user->roles()->sync($request['role']);
-        return redirect()->route('admin.index')
+           $admin=Admin::find($id);
+            $admin->name = $request['name'];
+            $admin->email= $request['email'];
+            $admin->save();
+            $admin->roles()->sync($request['role']);
+        return redirect()->route('admins.index')
             ->with('success','تم التعديل بنجاح');
     }
 
@@ -127,7 +127,7 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        User::find($id)->delete();
+        Admin::find($id)->delete();
         return redirect()->route('admin.index')
             ->with('success','تم الحذف بنجاح');
     }
@@ -136,8 +136,8 @@ class AdminController extends Controller
      */
     public function editPassword($id)
     {
-        $user = User::find($id);
-        return view('admin.editPassword',compact('user'));
+        $admin = Admin::find($id);
+        return view('dashboard.admin.editPassword',compact('admin'));
     }
     /**
      update password
@@ -147,10 +147,10 @@ class AdminController extends Controller
         $request->validate([
             'password' => 'required|min:6|confirmed',
         ]);
-        $user=User::find($id);
+        $admin=Admin::find($id);
 
-        $user->password = Hash::make($request['password']);
-        $user->save();
+        $admin->password = Hash::make($request['password']);
+        $admin->save();
         return redirect()->route('admin.index')
             ->with('success','تمتغير الباسورد بنجاح');
     }

@@ -2,7 +2,7 @@
 @section('content')
   <div class="container">
       <h4> تعديل مقالة</h4><br/>
-      <form method="post" action="{{route('dashboard.update', $post->id)}}" enctype="multipart/form-data">
+      <form method="post" action="{{route('post', $post->id)}}" enctype="multipart/form-data">
         @csrf
         <input name="_method" type="hidden" value="PATCH">
           <div class="form-group">
@@ -31,7 +31,7 @@
         <textarea class="form-control" id="description" name="description" placeholder="أدخل الوصف">{{$post->description}}</textarea>
       </div>
           <button type="submit" class="btn btn-sm btn-primary  px-4">حفظ</button>
-          <a href="{{route('dashboard.index')}}" class="btn btn-sm btn-secondary  px-4">الغاء</a>
+          <a href="{{route('posts.index')}}" class="btn btn-sm btn-secondary  px-4">الغاء</a>
     </form>
   </div>
 @endsection

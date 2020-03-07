@@ -1,10 +1,9 @@
 <?php
-
 use App\Role;
-use App\User;
+use App\Admin;
 use Illuminate\Database\Seeder;
 
-class UsersTableSeeder extends Seeder
+class AdminsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,11 +12,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $admin = new User();
+        $admin = new Admin();
         $admin->name = 'Admin';
         $admin->email = 'admin@example.com';
         $admin->password = bcrypt('password');
         $admin->save();
-        $admin->roles()->attach(Role::where('name', 'admin')->first());
+        $admin->roles()->attach(Role::where('name', 'مدير')->first());
     }
 }

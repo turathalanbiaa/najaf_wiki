@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 
-class DashboardController extends Controller
+class PostController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,8 +18,9 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('role:admin,author');
+        $this->middleware('auth:admin');
+        $this->middleware('role:محرر,مدير');
+
     }
 
     /**
@@ -30,7 +31,7 @@ class DashboardController extends Controller
     public function index()
     {
         $posts = Post::paginate(5);
-        return view('dashboard.index', compact('posts'));
+        return view('dashboard.post.index', compact('posts'));
     }
 
     /**
@@ -41,7 +42,7 @@ class DashboardController extends Controller
     public function create()
     {
         $categories = Category::All();
-        return view('dashboard.create', compact('categories'));
+        return view('dashboard.article.create', compact('categories'));
     }
 
     /**
@@ -62,7 +63,7 @@ class DashboardController extends Controller
         $post->description=$request->get('description');
         $post->subcategory_id=$request->get('subcategory');
        $post->save();
-        return redirect('dashboard')->with('success', 'تمت الأضافه بنجاح');
+        return redirect('dashboard.post')->with('success', 'تمت الأضافه بنجاح');
     }
 
     /**
@@ -74,7 +75,7 @@ class DashboardController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return view('dashboard.detail',compact('post'));
+        return view('dashboard.post.detail',compact('post'));
     }
 
     /**
@@ -88,7 +89,7 @@ class DashboardController extends Controller
         $post = Post::find($id);
         $categories = Category::All();
         //return response()->json($post);
-        return view('dashboard.edit',compact('post','categories'));
+        return view('dashboard.post.edit',compact('post','categories'));
     }
 
     /**
@@ -105,7 +106,7 @@ class DashboardController extends Controller
         $post->description=$request->get('description');
         $post->subcategory_id=$request->get('subcategory');
         $post->save();
-        return redirect('dashboard')->with('success', 'تمت التعديل بنجاح');
+        return redirect('dashboard/post')->with('success', 'تمت التعديل بنجاح');
     }
 
     /**

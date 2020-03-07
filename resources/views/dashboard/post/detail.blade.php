@@ -28,8 +28,8 @@
         </div>
       </div>
       <div class="col-md-12">
-        <a href="{{route('dashboard.edit', $post->id)}}" class="btn  btn-sm btn-primary px-4">تعديل</a>
-        <a href="{{route('dashboard.index')}}" class="btn btn-sm btn-secondary px-4">رجوع</a>
+        <a href="{{route('posts.edit', $post->id)}}" class="btn  btn-sm btn-primary px-4">تعديل</a>
+        <a href="{{route('posts.index')}}" class="btn btn-sm btn-secondary px-4">رجوع</a>
       </div>
     </div>
   </div>
