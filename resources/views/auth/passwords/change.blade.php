@@ -60,6 +60,7 @@
                                     <button type="submit" class="btn btn-sm btn-primary px-4">
                                         {{ __('حفظ') }}
                                     </button>
+                                    <a class="btn btn-sm btn-secondary px-4" href="{{route('admins.index')}}">رجوع</a>
                                 </div>
                             </div>
                         </form>

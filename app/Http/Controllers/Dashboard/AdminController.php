@@ -128,7 +128,7 @@ class AdminController extends Controller
     public function destroy($id)
     {
         Admin::find($id)->delete();
-        return redirect()->route('admin.index')
+        return redirect()->route('admins.index')
             ->with('success','تم الحذف بنجاح');
     }
     /**
@@ -151,7 +151,7 @@ class AdminController extends Controller
 
         $admin->password = Hash::make($request['password']);
         $admin->save();
-        return redirect()->route('admin.index')
+        return redirect()->route('admins.index')
             ->with('success','تمتغير الباسورد بنجاح');
     }
 }

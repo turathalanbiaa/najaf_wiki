@@ -39,8 +39,7 @@
                             @if(Auth::user()->hasRole('مدير')||Auth::user()->hasRole('محرر'))
                         <li class="nav-item">
                         <a class="nav-link" href="{{ url('/dashboard/posts') }}">
-                           لوحة التحكم
-                        </a>
+ادارة المقالات                        </a>
                         </li>
                             @endif
                         @if(Auth::user()->hasRole('مدير'))
