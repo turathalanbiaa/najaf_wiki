@@ -28,6 +28,9 @@ body {
     line-height: 1.4em;
     padding-bottom: 0em;
 }
+.article h3 {
+    font-size: 1.2em;
+}
 .comment-wrapper .panel-body {
     max-height:650px;
     overflow:auto;
