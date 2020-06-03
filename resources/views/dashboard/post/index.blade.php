@@ -12,6 +12,7 @@
         <table class="table table-bordered">
             <thead>
             <th>العنوان</th>
+            <th>الحالة</th>
             <th>العمليات</th>
             </thead>
             <tbody>
@@ -19,15 +20,19 @@
             @foreach ($posts as $post)
                 <tr>
                     <td>{{$post->title}}</td>
-
+                    <td><input type="checkbox" {{ $post->status ? 'checked' : '' }} name="status" onclick="return false;"></td>
                     <td class="d-flex">
                         <a  href="{{route('posts.show', $post->id)}}" class="btn  btn-sm btn-primary mr-1">معاينة</a>
                         <a href="{{route('posts.edit', $post->id)}}" class="btn  btn-sm btn-secondary">تعديل</a>
+                        @auth
+                            @if(Auth::user()->hasRole('مدير'))
                         <form class="delFrm" action="{{route('posts.destroy',$post->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger mx-1" type="submit">حذف</button>
                         </form>
+                            @endif
+                        @endauth
                     </td>
                 </tr>
             @endforeach

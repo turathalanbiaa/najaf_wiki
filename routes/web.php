@@ -24,6 +24,7 @@ Route::get('dashboard/admin/showChangePasswordForm','Auth\ChangePasswordControll
 Route::post('dashboard/admin/changePassword','Auth\ChangePasswordController@changePassword')->name('changePassword');
 
 Route::resource('dashboard/posts','Dashboard\PostController');
+Route::get('dashboard/accept/{id}','Dashboard\PostController@accept')->name('accept')->middleware('role:مدير');
 Route::get('dashboard/getSubcategory/{id}', 'Dashboard\PostController@getSubcategory');
 
 

@@ -1,7 +1,7 @@
 body {
    background: url("../body-top.png") repeat-x top left #f6f6f6;;
     direction: rtl;
-    font-family: Roboto;
+    font-family: 'Markazi Text', serif;
   }
 .navbar-laravel {
     background-color: #fff;

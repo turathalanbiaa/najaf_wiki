@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 
 class PostController extends Controller
@@ -62,6 +63,9 @@ class PostController extends Controller
         $post->title=$request->get('title');
         $post->description=$request->get('description');
         $post->subcategory_id=$request->get('subcategory');
+        if ( Auth::user()->hasRole('مدير')){
+            $post->status=1;
+        }
        $post->save();
         return redirect('dashboard/posts')->with('success', 'تمت الأضافه بنجاح');
     }
@@ -105,10 +109,27 @@ class PostController extends Controller
         $post->title=$request->get('title');
         $post->description=$request->get('description');
         $post->subcategory_id=$request->get('subcategory');
+        if ( Auth::user()->hasRole('مدير')){
+            $post->status=1;
+        }
         $post->save();
         return redirect('dashboard/posts')->with('success', 'تمت التعديل بنجاح');
     }
-
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function accept(Request $request, $id)
+    {
+        if ( Auth::user()->hasRole('مدير')) {
+            $post = Post::find($id);
+            $post->status = 1;
+            $post->save();
+            return redirect('dashboard/posts')->with('success', 'تمت الموافقة بنجاح');
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -117,10 +138,12 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post= Post::find($id);
-        $post->delete();
-        return redirect('dashboard/posts')->with('success','تم الحذف بنجاح');
-
+        if ( Auth::user()->hasRole('مدير')) {
+            $post = Post::find($id);
+            $post->delete();
+            return redirect('dashboard/posts')->with('success', 'تم الحذف بنجاح');
+        }
+        return redirect('dashboard/posts');
     }
     public function getSubcategory($id)
     {

@@ -10,8 +10,8 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if ($guard == "admin" && Auth::guard($guard)->check()) {
-            return redirect('/dashboard/posts');
-        }
+        return redirect('/dashboard/posts');
+    }
 
         if (Auth::guard($guard)->check()) {
             return redirect('/post');

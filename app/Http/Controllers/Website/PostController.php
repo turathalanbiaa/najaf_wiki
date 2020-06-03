@@ -17,14 +17,14 @@ class PostController extends Controller
     }
     public function post()
     {
-      $post = Post::where('subcategory_id', 1)->first();
+      $post = Post::where('subcategory_id', 1)->where('status',1)->first();
         $categories = Category::All();
         return view('website.index', compact('post', 'categories'));
     }
 
     public function show($id)
     {
-        $post = Post::where('subcategory_id', $id)->first();
+        $post = Post::where('subcategory_id', $id)->where('status',1)->first();
         $categories = Category::All();
         return view('website.index', compact('post', 'categories'));
 
@@ -32,7 +32,7 @@ class PostController extends Controller
 
     public function search(Request $request)
     {
-        $post = Post::search($request['search'])->first();
+        $post = Post::search($request['search'])->where('status',1)->first();
         $categories = Category::All();
         return view('website.index', compact('post', 'categories'));
     }
