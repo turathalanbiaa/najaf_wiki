@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="52c3b420-88c9-4d2d-a4d5-b91180438710" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Website/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Website/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/lfm.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/lfm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/post/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/post/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/post/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/posts.index" beforeDir="false" afterPath="$PROJECT_DIR$/storage/posts.index" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,18 +89,19 @@
     <session id="1274493071">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -162,8 +152,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="26" column="111" lean-forward="true" selection-start-line="26" selection-start-column="85" selection-end-line="26" selection-end-column="111" />
+            <state relative-caret-position="391">
+              <caret line="26" column="111" selection-start-line="26" selection-start-column="85" selection-end-line="26" selection-end-column="111" />
             </state>
           </provider>
         </entry>
@@ -172,7 +162,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/dashboard/post/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1656">
-              <caret line="72" column="17" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="72" selection-end-column="17" />
+              <caret line="72" column="17" selection-start-line="42" selection-start-column="7" selection-end-line="72" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -189,7 +179,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="897">
               <caret line="39" column="61" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="61" />
             </state>
           </provider>
@@ -198,8 +188,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Dashboard/PostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="145" column="43" lean-forward="true" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="43" />
+            <state relative-caret-position="3197">
+              <caret line="145" column="43" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -392,6 +382,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -557,7 +548,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -660,18 +650,18 @@
       <workItem from="1583821652859" duration="1543000" />
       <workItem from="1584434287445" duration="1775000" />
       <workItem from="1585789174591" duration="12000" />
-      <workItem from="1591163879286" duration="10221000" />
+      <workItem from="1591163879286" duration="10316000" />
+      <workItem from="1591257117973" duration="238000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252703000" />
+    <option name="totallyTimeSpent" value="253036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.20362474" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.20575693" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5018248" side_tool="true" weight="0.23454158" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -686,7 +676,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.29515418" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.29515418" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1014,31 +1004,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/dashboard/post/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="39" column="61" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="61" />
+        <state relative-caret-position="318">
+          <caret line="47" column="82" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="26" column="111" lean-forward="true" selection-start-line="26" selection-start-column="85" selection-end-line="26" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Dashboard/PostController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="145" column="43" lean-forward="true" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="43" />
+        <state relative-caret-position="391">
+          <caret line="26" column="111" selection-start-line="26" selection-start-column="85" selection-end-line="26" selection-end-column="111" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/dashboard/post/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1656">
-          <caret line="72" column="17" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="72" selection-end-column="17" />
+          <caret line="72" column="17" selection-start-line="42" selection-start-column="7" selection-end-line="72" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1049,10 +1032,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/dashboard/post/detail.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="47" column="82" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
+        <state relative-caret-position="897">
+          <caret line="39" column="61" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Dashboard/PostController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3197">
+          <caret line="145" column="43" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="43" />
         </state>
       </provider>
     </entry>
